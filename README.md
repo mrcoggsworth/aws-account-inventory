@@ -4,7 +4,7 @@
 
 ## Description
 
-This repository is a dedicated area to develop code that collects AWS Organizaitions data that is gathered all the way from the Root to each account that exists.
+This repository is a dedicated area to develop code that collects AWS Organizations data that is gathered all the way from the Root to each account that exists.
 
 ### Example returns
 
