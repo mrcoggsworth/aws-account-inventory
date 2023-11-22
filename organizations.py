@@ -471,20 +471,6 @@ def create_aws_account_ds(parent_id: str, session: Session) -> dict[str, Any]:
             top_level_roots.append(ou)
             root_ou_breakdown.update({"Children": top_level_roots})
 
-        # if parent_id != "r-nyw4":
-        #     parents_list: ListParentsResponseTypeDef = list_parents(
-        #         child_id=ou_id, session=session
-        #     )
-        #     parent_ou: str = describe_ou(session=session, ou_id=parents_list[0]["Id"])[
-        #         "OrganizationalUnit"
-        #     ]["Name"]
-        #     current_ou: str = describe_ou(session=session, ou_id=ou_id)[
-        #         "OrganizationalUnit"
-        #     ]["Name"]
-
-        # print(f'{root_ou_breakdown.get("Name")}::{parent_ou}::{current_ou}')
-        # print(list_children(session=session, parent_id=ou_id, child_type="ACCOUNT"))
-
         create_aws_account_ds(parent_id=ou_id, session=session)
 
 
@@ -505,7 +491,6 @@ def main() -> None:
     create_aws_account_ds(
         parent_id=list_roots(session=session)["Roots"][0]["Id"], session=session
     )
-    # pprint(object=root_ou_breakdown)
 
     with open(file="ou_structure.json", mode="w", encoding="utf-8") as ou_structure:
         json.dump(obj=root_ou_breakdown, fp=ou_structure, indent=4)
