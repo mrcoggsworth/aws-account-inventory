@@ -1,7 +1,6 @@
 """organizations module"""
 import json
 from datetime import datetime
-from pprint import pprint
 from typing import TypedDict, List, NotRequired, Literal, Any, Union
 
 import boto3
