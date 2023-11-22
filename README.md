@@ -137,5 +137,5 @@ ou_structure.json output
 ---
 
 - Create cli tool to encompass commands
-- Continue to add depth of data enrichement
+- Continue to add depth of data enrichment
  
