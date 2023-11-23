@@ -477,7 +477,7 @@ def main() -> None:
     """Execution of gathered logic"""
 
     # create session and connect to organizations client
-    session = boto3.Session(profile_name="AdministratorAccess-160419733331")
+    session = boto3.Session() # use aws keys or provide a profile
     root_response: ListRootsResponseTypeDef = list_roots(session=session)["Roots"][0]
 
     # build root id inside of root_ou_breakdown
